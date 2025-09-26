@@ -7,7 +7,7 @@ import (
 	session "main/lib/session/memory"
 )
 
-func Submit(client *client.Client) {
+func Post(client *client.Client) {
 	var errorMessage string
 	state := session.Start(receive.SessionId(client))
 	username := receive.FormValue(client, "username")

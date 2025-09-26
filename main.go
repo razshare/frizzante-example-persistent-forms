@@ -27,6 +27,6 @@ func main() {
 	srv.Render = render
 	srv.Routes = []route.Route{
 		{Pattern: "GET /", Handler: welcome.View},
-		{Pattern: "POST /", Handler: welcome.Submit},
+		{Pattern: "POST /", Handler: welcome.Post},
 	}
 }

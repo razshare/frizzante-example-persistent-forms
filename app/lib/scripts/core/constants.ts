@@ -1,1 +1,1 @@
-export const IS_BROWSER = typeof document !== "undefined";
+export const IS_BROWSER = typeof document !== "undefined"

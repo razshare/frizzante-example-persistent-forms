@@ -2,9 +2,10 @@ package receive
 
 import (
 	"errors"
+	"net/http"
+
 	"main/lib/core/client"
 	"main/lib/core/stack"
-	"net/http"
 )
 
 // FormValue reads the first form value associated with the given key and returns it.
