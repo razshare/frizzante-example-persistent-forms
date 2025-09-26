@@ -4,14 +4,11 @@
   import type { Form as Props } from "$lib/types/gen/main/lib/session/memory/Form";
 
   let { Username, Error }: Props = $props();
-  $effect(function update(){
-      console.log({Username})
-  })
 </script>
 
 <Layout title="Welcome">
   <form method="POST" {...action("/")}>
-    <input type="text" bind:value="{Username}" placeholder="Username" name="username" class="input input-neutral" />
+    <input type="text" value="{Username}" placeholder="Username" name="username" class="input input-neutral" />
     <div class="pt-6"></div>
 
     {#if Error}
