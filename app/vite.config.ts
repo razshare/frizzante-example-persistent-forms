@@ -16,9 +16,6 @@ export default defineConfig({
     svelte({
       compilerOptions: {
         css: "injected",
-        experimental: {
-          async: true,
-        },
       },
     }),
   ],

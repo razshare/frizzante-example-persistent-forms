@@ -6,12 +6,18 @@ import (
 	"main/lib/core/send"
 	"main/lib/core/view"
 	session "main/lib/session/memory"
+	"os"
 )
 
 func View(client *client.Client) {
-	state := session.Start(receive.SessionId(client))
-	send.View(client, view.View{
-		Name:  "Welcome",
-		Props: state.Form,
+	send.FileOrElse(client, send.FileOrElseConfig{
+		UseDisk: os.Getenv("DEV") == "1",
+		OrElse: func() {
+			state := session.Start(receive.SessionId(client))
+			send.View(client, view.View{
+				Name:  "Welcome",
+				Props: state.Form,
+			})
+		},
 	})
 }
